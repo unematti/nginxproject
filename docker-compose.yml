@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    web:
+        image: nginxpractice:v1 
+        ports:
+            - 8080:80
+        networks:
+            - mynet
+        deploy: 
+            replicas: 3
+networks:
+    mynet:
