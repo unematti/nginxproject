@@ -40,7 +40,7 @@ EXPOSE 80
 EOF
 
 docker swarm init
-docker image build -t archnginx:v1 .
+docker image build -t nginxpractise:v1 .
 rm nginx.conf
 rm Dockerfile
 rm index.html
