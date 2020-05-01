@@ -39,8 +39,11 @@ EXPOSE 80
 
 EOF
 
-docker image build -t centosnginx:v1 .
+docker swarm init
+docker image build -t nginxpractice:v1 .
 rm nginx.conf
 rm Dockerfile
 rm index.html
-docker run -d -p 8080:80 centosnginx:v1
+
+#docker run -d -p 8080:80 centosnginx:v1
+docker stack deploy web -c docker-compose.yml

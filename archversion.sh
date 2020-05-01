@@ -39,8 +39,10 @@ EXPOSE 80
 
 EOF
 
+docker swarm init
 docker image build -t archnginx:v1 .
 rm nginx.conf
 rm Dockerfile
 rm index.html
-docker run -d -p 8080:80 archnginx:v1
+#docker run -d -p 8080:80 archnginx:v1
+docker stack deploy web -c docker-compose.yml
